@@ -14,7 +14,7 @@ import {
 
 
 
-const UsersTable = ({ rows }) => {
+const UsersTable = ({ rows ,selectedUser,deleteUser}) => {
     return (
       <TableContainer component={Paper}>
         <Table>
@@ -37,17 +37,17 @@ const UsersTable = ({ rows }) => {
                   <TableCell>
                     <Button
                       sx={{ margin: '0px 10px' }}
-                      onClick={() => {
-                        // Update handler
-                      }}
+                      onClick={() => selectedUser({id: row.id, name: row.name})
+                        
+                      }
                     >
                       Update
                     </Button>
                     <Button
                       sx={{ margin: '0px 10px' }}
-                      onClick={() => {
-                        // Delete handler
-                      }}
+                      onClick={() => deleteUser({id: row.id})}
+                        
+                      
                     >
                       Delete
                     </Button>
